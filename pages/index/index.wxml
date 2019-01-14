@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view>
+<button bindtap='show'>显示</button>
+<button bindtap='shows'>显示2</button>
+</view>
+<mymodal id="test" inner-text="Some text" bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></mymodal>
