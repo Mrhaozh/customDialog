@@ -11,9 +11,19 @@ Page({
     //console.log(this.selectComponent("#test"));
   },
   show:function(){
-    this.selectComponent("#test").setTitle("添加账号");
-    var content = [{ "placeholder": "账号", "inputType": "text" }, { "placeholder": "密码", "inputType": "text" }, { "placeholder": "联系方式", "inputType": "phone" }];
-    this.selectComponent("#test").setContent(JSON.stringify(content));
+    var content = [{ "placeholder": "账号", "name": "username", "inputType": "text","value":"" }, { "placeholder": "密码", "name": "password","inputType": "text","value":"" }, { "placeholder": "联系方式","name":"tel", "inputType": "phone","value":"" }];
+    this.selectComponent("#test").setData({
+        title:"添加账号",
+        content:content
+    });
+    this.selectComponent("#test").showModal();
+  },
+  showss:function(){
+    var content = [{ "placeholder": "账号", "name": "username", "inputType": "text","value":""}, { "placeholder": "密码", "name": "password", "inputType": "text","value":"" }];
+    this.selectComponent("#test").setData({
+      title: "添加",
+      content: content
+    });
     this.selectComponent("#test").showModal();
   },
   shows:function(){
@@ -27,7 +37,7 @@ Page({
     this.selectComponent("#test").hideModal();
   },
   okEvent: function () {
-    console.log("show");
+    console.log(this.selectComponent('#test').data.inputValue);
     this.selectComponent("#test").hideModal();
   },
   getUserInfo: function(e) {

@@ -2,7 +2,7 @@
 <view hidden='{{isHide}}' class='content'>
   <view class='model'>
   <view>{{title}}</view>
-    <input wx:for='{{content}}' placeholder='{{item.placeholder}}：' type='{{item.inputtype}}'></input>
+    <input wx:for='{{content}}' wx:key='idx' placeholder='{{item.placeholder}}：' type='{{item.inputtype}}' data-name='{{item.name}}' value='{{item.value}}' bindinput='input'></input>
      <view class='bottom'>
     <view class='btn-cancel' catchtap="cancelEvent">取消</view>
     <view class='btn-confirm' catchtap="okEvent">确定</view>
