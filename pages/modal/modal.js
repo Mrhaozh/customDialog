@@ -24,7 +24,7 @@ Component({
       this.setData({isHide:false});
     },
     hideModal: function () {
-      this.setData({isHide: true});
+      this.setData({isHide: true,inputValue:[]});
       subResult = [];
     },
     cancelEvent: function () {
